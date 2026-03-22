@@ -4,15 +4,17 @@ import {
   withInfoPlist,
   withAndroidManifest,
 } from 'expo/config-plugins';
+import { withIcons } from './withIcons';
 
 type WithExpoVideoOptions = {
   supportsBackgroundPlayback?: boolean;
   supportsPictureInPicture?: boolean;
+  icons?: string[];
 };
 
 const withExpoVideo: ConfigPlugin<WithExpoVideoOptions> = (
   config,
-  { supportsBackgroundPlayback, supportsPictureInPicture } = {}
+  { supportsBackgroundPlayback, supportsPictureInPicture, icons } = {}
 ) => {
   withInfoPlist(config, (config) => {
     const currentBackgroundModes = config.modResults.UIBackgroundModes ?? [];
@@ -95,6 +97,9 @@ const withExpoVideo: ConfigPlugin<WithExpoVideoOptions> = (
 
     return config;
   });
+
+  withIcons(config, { icons });
+
   return config;
 };
 

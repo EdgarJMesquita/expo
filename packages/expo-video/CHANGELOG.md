@@ -5,6 +5,7 @@
 ### 🛠 Breaking changes
 
 ### 🎉 New features
+[Android] Add `pictureInPictureActions` and `nowPlayingActions` props to `VideoPlayer`. ([#44138](https://github.com/expo/expo/pull/44138) by [@edgarjmesquita](https://github.com/edgarjmesquita))
 
 ### 🐛 Bug fixes
 
